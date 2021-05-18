@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <main id="root">
+        <div class="flex justify-center" tabindex="-1" @keyup.left="prevImage" @keyup.right="nextImage">
+            <aside class="flex" @keyup.enter="changeImageMinus">
+                <button><i class="fa fa-angle-left fa-5x" aria-hidden="true" @click="prevImage()"></i></button>
+            </aside>
+            <div>
+                <div>
+                    <img :src="wallpaper">
+                </div>
+
+            </div>
+            <aside class="flex" @keyup.enter="changeImagePlus">
+                <button><i class="fa fa-angle-right fa-5x" aria-hidden="true" @click="nextImage()"></i></button>
+            </aside>
+        </div>
+
+        <div class="flex justify-center radio-container">
+            <input type="radio" name="selector" id="selector1" @click="radioClick()" checked>
+            <input type="radio" name="selector" id="selector2" @click="radioClick()">
+            <input type="radio" name="selector" id="selector3" @click="radioClick()">
+            <input type="radio" name="selector" id="selector4" @click="radioClick()">
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
